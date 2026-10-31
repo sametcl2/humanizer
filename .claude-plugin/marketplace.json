@@ -1,0 +1,12 @@
+{
+  "name": "humanizer",
+  "owner": { "name": "Samet Şahin" },
+  "plugins": [
+    {
+      "name": "humanizer",
+      "source": "./",
+      "description": "Write and revise prose so it reads like a careful human wrote it, not a chatbot.",
+      "version": "1.0.0"
+    }
+  ]
+}
