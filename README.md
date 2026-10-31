@@ -21,10 +21,7 @@ It never invents facts or citations to make text look more specific.
 
 ```
 .
-├── .claude-plugin/
-│   ├── plugin.json          # Claude Code plugin manifest
-│   └── marketplace.json     # lets this repo act as a one-plugin marketplace
-├── skills/humanizer/
+├── humanizer/
 │   ├── SKILL.md             # main instructions (loaded when the skill triggers)
 │   ├── references/
 │   │   ├── patterns.md      # full pattern catalog with explanations and fixes
@@ -39,16 +36,8 @@ It never invents facts or citations to make text look more specific.
 
 ### Claude Code
 
-**Option A: plugin (recommended, easy to update).** Inside Claude Code:
-
-```
-/plugin marketplace add <github-user>/humanizer
-/plugin install humanizer@humanizer
-```
-
-Update later with `/plugin marketplace update humanizer`.
-
-**Option B: plain skill folder.**
+Claude Code reads skills from folders on disk, so installing means putting the
+`humanizer/` folder where it looks:
 
 ```bash
 git clone https://github.com/<github-user>/humanizer.git
@@ -57,9 +46,9 @@ cd humanizer
 ./install.sh --project   # current project only: ./.claude/skills/humanizer
 ```
 
-Or copy `skills/humanizer/` there by hand. Start a new session; the skill loads
-automatically when you ask to write, humanize or audit text. You can also call it
-explicitly: "use the humanizer skill on README.md".
+Or copy `humanizer/` there by hand. Start a new session; the skill loads automatically
+when you ask to write, humanize or audit text. You can also call it explicitly: "use the
+humanizer skill on README.md". To update, `git pull` and run `./install.sh` again.
 
 ### Claude.ai / Claude app
 
@@ -69,9 +58,9 @@ Skills (or open the file in a chat and choose *Save skill*).
 ## Scanner
 
 ```bash
-python skills/humanizer/scripts/scan.py draft.md            # English
-python skills/humanizer/scripts/scan.py taslak.md --lang tr # Turkish
-cat draft.md | python skills/humanizer/scripts/scan.py - --json
+python humanizer/scripts/scan.py draft.md            # English
+python humanizer/scripts/scan.py taslak.md --lang tr # Turkish
+cat draft.md | python humanizer/scripts/scan.py - --json
 ```
 
 It flags word- and format-level signals with line numbers (inflated significance,
@@ -107,5 +96,4 @@ yeniden yazar ya da bir metinde hangi kalıpların yapay zekâ izlenimi verdiği
 kaynak uydurmaz. İngilizce rehber ve örnekler `references/english.md`, Türkçe kalıplar `references/turkish.md` dosyasındadır, tarayıcı
 `--lang tr` ile Türkçe metinlerde çalışır.
 
-Claude Code kurulumu: Claude Code içinde `/plugin marketplace add <github-kullanıcı>/humanizer`
-ve `/plugin install humanizer@humanizer`, ya da repoyu klonlayıp `./install.sh`.
+Claude Code kurulumu: repoyu klonlayıp `./install.sh` çalıştır; skill `~/.claude/skills/humanizer` içine kopyalanır.
