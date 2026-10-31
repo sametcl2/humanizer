@@ -40,19 +40,23 @@ Claude Code reads skills from folders on disk, so installing means putting the
 `humanizer/` folder where it looks:
 
 ```bash
-git clone https://github.com/<github-user>/humanizer.git
+git clone https://github.com/sametcl2/humanizer.git
 cd humanizer
 ./install.sh             # all projects: ~/.claude/skills/humanizer
 ./install.sh --project   # current project only: ./.claude/skills/humanizer
 ```
 
-Or copy `humanizer/` there by hand. Start a new session; the skill loads automatically
+If you downloaded the ZIP instead of cloning and get "permission denied", run
+`bash install.sh`. On Windows, copy the `humanizer` folder to
+`%USERPROFILE%\.claude\skills\` by hand.
+
+Or copy `humanizer/` there by hand on any system. Start a new session; the skill loads automatically
 when you ask to write, humanize or audit text. You can also call it explicitly: "use the
 humanizer skill on README.md". To update, `git pull` and run `./install.sh` again.
 
 ### Claude.ai / Claude app
 
-Download `humanizer.skill` from Releases and upload it in Settings > Capabilities >
+Download `humanizer.skill` from [Releases](https://github.com/sametcl2/humanizer/releases/latest) and upload it in Settings > Capabilities >
 Skills (or open the file in a chat and choose *Save skill*).
 
 ## Scanner
@@ -96,4 +100,4 @@ yeniden yazar ya da bir metinde hangi kalıpların yapay zekâ izlenimi verdiği
 kaynak uydurmaz. İngilizce rehber ve örnekler `references/english.md`, Türkçe kalıplar `references/turkish.md` dosyasındadır, tarayıcı
 `--lang tr` ile Türkçe metinlerde çalışır.
 
-Claude Code kurulumu: repoyu klonlayıp `./install.sh` çalıştır; skill `~/.claude/skills/humanizer` içine kopyalanır.
+Claude Code kurulumu: repoyu klonlayıp `./install.sh` çalıştır (izin hatasında `bash install.sh`); skill `~/.claude/skills/humanizer` içine kopyalanır. Windows'ta `humanizer` klasörünü `%USERPROFILE%\.claude\skills\` içine elle kopyala. Claude uygulaması için `humanizer.skill` dosyası [Releases](https://github.com/sametcl2/humanizer/releases/latest) sayfasında.
