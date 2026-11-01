@@ -88,16 +88,3 @@ The pattern catalog is adapted from
 by the contributors of WikiProject AI Cleanup, used under CC BY-SA 4.0. The text has
 been paraphrased, reorganized and extended (general-writing guidance, Turkish section,
 scanner). Changes are not endorsed by Wikipedia or its editors.
-
----
-
-## Türkçe özet
-
-`humanizer`, Wikipedia'daki "Signs of AI writing" rehberine dayanan bir Claude skill'i.
-Metinleri yapay zekâ kokmayacak şekilde yazar, mevcut taslakları bilgileri koruyarak
-yeniden yazar ya da bir metinde hangi kalıpların yapay zekâ izlenimi verdiğini raporlar.
-Önce içeriği (somutluk, kaynak, doğruluk), sonra yapıyı, en son dili düzeltir; bilgi veya
-kaynak uydurmaz. İngilizce rehber ve örnekler `references/english.md`, Türkçe kalıplar `references/turkish.md` dosyasındadır, tarayıcı
-`--lang tr` ile Türkçe metinlerde çalışır.
-
-Claude Code kurulumu: repoyu klonlayıp `./install.sh` çalıştır (izin hatasında `bash install.sh`); skill `~/.claude/skills/humanizer` içine kopyalanır. Windows'ta `humanizer` klasörünü `%USERPROFILE%\.claude\skills\` içine elle kopyala. Claude uygulaması için `humanizer.skill` dosyası [Releases](https://github.com/sametcl2/humanizer/releases/latest) sayfasında.
